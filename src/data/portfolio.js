@@ -42,6 +42,7 @@ export const portfolioData = {
     bio: 'Computer Science student pursuing B.Tech at NNRG. I build practical web apps with Python and Flask, and I am exploring AI and intelligent learning systems — including a multi-agent learning platform now live on the web.',
     locationShort: 'Hyderabad, India',
     avatar: 'https://avatars.githubusercontent.com/u/281837371?v=4',
+    photo: 'images/profile.jpg',
     initials: 'AK',
   },
 

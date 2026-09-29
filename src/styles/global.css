@@ -763,6 +763,38 @@ button:hover .ext {
   color: var(--ink-2);
 }
 
+/* Portrait figure */
+.portrait {
+  margin: 0 0 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-s);
+  transition: border-color 0.45s ease, background-color 0.45s ease;
+}
+
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.portrait img {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.portrait:hover img {
+  transform: scale(1.02);
+}
+
+.portrait figcaption {
+  padding: 0.75rem 1.1rem;
+  border-top: 1px solid var(--hairline);
+  transition: border-color 0.45s ease;
+}
+
 .status-strip {
   margin-top: 1.75rem;
   border-left: 2px solid var(--accent);
