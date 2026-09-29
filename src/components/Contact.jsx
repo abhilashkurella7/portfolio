@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
 import { portfolioData } from '../data/portfolio'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -19,34 +18,23 @@ function LinkedInIcon() {
   )
 }
 
+function LiveIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
 export default function Contact() {
   const { contact, social, personal } = portfolioData
-  const [copied, setCopied] = useState(false)
-  const timer = useRef(0)
-
-  useEffect(() => () => window.clearTimeout(timer.current), [])
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(social.email)
-    } catch {
-      const ta = document.createElement('textarea')
-      ta.value = social.email
-      document.body.appendChild(ta)
-      ta.select()
-      document.execCommand('copy')
-      ta.remove()
-    }
-    setCopied(true)
-    window.clearTimeout(timer.current)
-    timer.current = window.setTimeout(() => setCopied(false), 2000)
-  }
 
   return (
     <section className="section section-alt" id="contact" aria-labelledby="contact-title">
       <div className="wrap">
         <SectionHeading
-          index="04"
+          index="06"
           eyebrow="Contact"
           title={contact.heading}
           sub={contact.subheading}
@@ -55,26 +43,32 @@ export default function Contact() {
         <div className="contact-grid">
           <Reveal>
             <div className="contact-card">
-              <h3>Email me directly</h3>
+              <h3>Let&apos;s connect</h3>
               <p style={{ color: 'var(--ink-2)', fontSize: '0.97rem' }}>
-                No forms, no middlemen — your message lands straight in my
-                inbox. I&apos;m happy to talk about learning, collaboration or
-                opportunities.
+                I don&apos;t publish an email address — GitHub and LinkedIn are
+                the verified ways to reach me. I&apos;m happy to talk about
+                learning, collaboration and building useful products.
               </p>
               <div className="email-row">
-                <span className="email-address">{social.email}</span>
-              </div>
-              <div className="email-row">
-                <a href={`mailto:${social.email}`} className="btn btn-primary btn-sm">
-                  Write an email
+                <a
+                  href={social.github}
+                  className="btn btn-primary btn-sm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Message via GitHub
+                  <span className="ext-mark" aria-hidden="true">↗</span>
                 </a>
-                <button type="button" className="btn btn-ghost btn-sm" onClick={copyEmail}>
-                  {copied ? 'Copied ✓' : 'Copy email'}
-                </button>
+                <a
+                  href={social.linkedin}
+                  className="btn btn-ghost btn-sm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Connect on LinkedIn
+                  <span className="ext-mark" aria-hidden="true">↗</span>
+                </a>
               </div>
-              <span aria-live="polite" style={{ fontSize: '0.85rem', color: 'var(--ink-3)' }}>
-                {copied ? 'Email address copied to clipboard.' : ''}
-              </span>
             </div>
           </Reveal>
           <Reveal delay={120}>
@@ -88,7 +82,7 @@ export default function Contact() {
                     <strong>
                       GitHub <span className="ext-mark" aria-hidden="true">↗</span>
                     </strong>
-                    <small>github.com/maankaalasushanth-crypto</small>
+                    <small>github.com/abhilashkurella7</small>
                   </span>
                 </a>
               </li>
@@ -102,6 +96,19 @@ export default function Contact() {
                       LinkedIn <span className="ext-mark" aria-hidden="true">↗</span>
                     </strong>
                     <small>{personal.name}</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://spirit-coders.vercel.app" target="_blank" rel="noreferrer">
+                  <span className="social-icon">
+                    <LiveIcon />
+                  </span>
+                  <span>
+                    <strong>
+                      Live project <span className="ext-mark" aria-hidden="true">↗</span>
+                    </strong>
+                    <small>spirit-coders.vercel.app</small>
                   </span>
                 </a>
               </li>

@@ -33,7 +33,7 @@ export default function Skills() {
           <p className="honesty-note">
             No proficiency bars or percentages — those would imply measurements
             that don&apos;t exist. This list mirrors exactly what my public
-            GitHub profile and repositories document.
+            README, repositories and live demo document.
           </p>
         </Reveal>
       </div>

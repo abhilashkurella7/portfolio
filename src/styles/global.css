@@ -1204,6 +1204,132 @@ p {
   }
 }
 
+/* ---------- Education + project visuals (Abhilash) ---------- */
+.edu-grid {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 880px;
+}
+
+.edu-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  padding: clamp(1.5rem, 3.5vw, 2.2rem);
+  box-shadow: var(--shadow-s);
+}
+
+.edu-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin-bottom: 0.6rem;
+}
+
+.edu-program {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.edu-detail {
+  color: var(--ink-2);
+  max-width: 44rem;
+}
+
+.agent-hero {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.agent-hero strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.agent-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  background: var(--accent-tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+[data-theme='dark'] .agent-pill {
+  color: var(--accent);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .agent-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.agent-card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.agent-card span {
+  display: block;
+}
+
+.doc-lines {
+  display: grid;
+  gap: 0.55rem;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+}
+
+.doc-lines strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.doc-lines span {
+  display: block;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--line-soft);
+}
+
+.doc-lines span.short {
+  margin-right: 30%;
+}
+
+.project-card + .project-card {
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  margin-bottom: 0;
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {

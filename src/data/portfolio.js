@@ -1,86 +1,120 @@
 /*
- * VERIFIED CONTENT — source of truth for this portfolio.
- * ---------------------------------------------------------------
+ * VERIFIED CONTENT — source of truth for Abhilash Kurella's portfolio.
+ * -----------------------------------------------------------------
  * Sources checked 2026-09-29:
- *  - GitHub profile  https://github.com/maankaalasushanth-crypto
- *      name, bio, location, 1 public repo, README team table, languages
- *  - GitHub API      api.github.com/users/maankaalasushanth-crypto (+/repos)
- *  - Repo            .../team-task-board (description, README, languages:
- *                    CSS / HTML / JavaScript, no homepage URL, no license)
- *  - LinkedIn        URL user-provided; page body not publicly fetchable
- *                    (auth wall) — link is used, profile claims are NOT.
- *  - Resume          none found in workspace — no resume facts used.
+ *  - GitHub profile  https://github.com/abhilashkurella7
+ *      name "Abhilash Kurella", avatar, 2 public repos,
+ *      location generalised to city (house number never exposed).
+ *  - GitHub API      api.github.com/users/abhilashkurella7 (+/repos)
+ *  - Repo            abhilashkurella7/spirit-coders
+ *      languages: TypeScript / CSS / JavaScript (API),
+ *      homepage: https://spirit-coders.vercel.app (repo field),
+ *      package.json: React 19, Vite, Tailwind CSS, TanStack Start/Router,
+ *      Radix UI — tech listed only from these files.
+ *  - Live demo       https://spirit-coders.vercel.app
+ *      visible copy: "Smart Agent X", multi-agent AI personalized learning,
+ *      Tutor / Planner / Assessor / Recommender agents, 12 capabilities,
+ *      3 roles (Students / Teachers / Admins). Features below quote only
+ *      what the live page visibly lists.
+ *  - Repo            abhilashkurella7/resume-
+ *      README.md (public): B.Tech at NNRG, Computer Science student,
+ *      aspiring software developer; interests Python, web development, AI;
+ *      hands-on HTML, Python, Flask, databases, GitHub, deployment
+ *      platforms; hackathons + technical projects. About/education/skills
+ *      below paraphrase only these sentences.
+ *  - LinkedIn        https://www.linkedin.com/in/abhilash-kurella-6547b2371/
+ *      URL user-provided; page body is auth-walled, so no profile claims
+ *      are used — link only.
+ *  - Resume file     none provided — Resume button stays disabled, no link.
  *  - Kaggle          none provided — section omitted.
+ *  - Email           none publicly verified — no email shown, no fake form.
  *
- * Rules enforced here: no invented jobs, companies, metrics, skills,
- * education details, certifications, demos, or testimonials. Anything
- * unverified is omitted, and the UI only renders sections with data.
+ * Rules enforced: no invented jobs, companies, metrics, CGPA, dates,
+ * certifications, testimonials, stars, or demo links. Anything unverified
+ * is omitted and the UI only renders sections with data.
  */
 
 export const portfolioData = {
   personal: {
-    name: 'Sushanth Maankaala',
-    headline: 'Data Science Student',
-    bio: 'Data Science student passionate about transforming data into meaningful insights. Building skills in Python, SQL, machine learning, data visualization.',
-    locationShort: 'Nizamabad, India',
-    avatar: 'https://avatars.githubusercontent.com/u/279248463?v=4',
-    initials: 'SM',
+    name: 'Abhilash Kurella',
+    headline: 'Computer Science Student',
+    subline: 'B.Tech · NNRG — aspiring software developer',
+    bio: 'Computer Science student pursuing B.Tech at NNRG. I build practical web apps with Python and Flask, and I am exploring AI and intelligent learning systems — including a multi-agent learning platform now live on the web.',
+    locationShort: 'Hyderabad, India',
+    avatar: 'https://avatars.githubusercontent.com/u/281837371?v=4',
+    initials: 'AK',
   },
 
   social: {
-    github: 'https://github.com/maankaalasushanth-crypto',
-    linkedin: 'https://www.linkedin.com/in/sushanth-maankaala-415aa1405/',
-    email: 'mankaalasushanth@gmail.com',
-    // Kaggle: not provided — intentionally absent (no placeholder URLs).
+    github: 'https://github.com/abhilashkurella7',
+    linkedin: 'https://www.linkedin.com/in/abhilash-kurella-6547b2371/',
+    // No publicly verified email — contact section uses profiles only.
+    email: null,
   },
 
   about: {
     heading: 'About me',
     paragraphs: [
-      'I am a Data Science student learning how to turn raw data into meaningful insights.',
-      'Right now my focus is on building strong foundations: Python and SQL for working with data, machine-learning concepts, and data visualization for communicating what the data says.',
+      'I am Abhilash — a Computer Science student pursuing B.Tech at NNRG and an aspiring software developer.',
+      'My stated focus is Python, web development and Artificial Intelligence: turning ideas into working projects, from Python applications and Flask web platforms to AI-powered systems and personalized learning solutions. I work with HTML, Python, Flask, databases, GitHub and deployment platforms, and I take part in hackathons and technical problem-solving while strengthening full-stack and AI fundamentals.',
     ],
     focusPoints: [
       {
-        title: 'Working with data',
-        text: 'Python and SQL practice for collecting, querying and preparing datasets.',
+        title: 'Python & Flask',
+        text: 'Python applications and Flask web platforms, as documented in my public README.',
       },
       {
-        title: 'Learning ML concepts',
-        text: 'Studying machine-learning fundamentals step by step.',
+        title: 'Web development',
+        text: 'HTML plus modern frontend work — TypeScript, React, Vite and Tailwind CSS in my live project.',
       },
       {
-        title: 'Visual communication',
-        text: 'Learning data visualization to present findings clearly.',
+        title: 'AI & learning systems',
+        text: 'Exploring AI-powered systems and personalized learning: tutor, planner, assessor and recommender agents.',
       },
       {
-        title: 'Collaborating with Git',
-        text: 'Practising real team workflows — branching, pull requests and review.',
+        title: 'Shipping & collaborating',
+        text: 'GitHub workflows, databases and deployment platforms — plus hackathons and real-world problem solving.',
       },
     ],
     statusLine:
-      'Early in my journey and looking for learning opportunities, guidance and peer collaboration.',
+      'Currently focused on programming, full-stack development and intelligent software systems — open to learning, collaborating and building useful products.',
   },
 
   skills: {
     heading: 'Skills',
     subheading:
-      'Only what my public profiles document — this list grows as I learn.',
+      'Only what my public README, repositories and live demo document — this list grows as I learn.',
     groups: [
       {
         title: 'Programming Languages',
-        note: 'From GitHub bio + repository code',
-        items: ['Python', 'SQL', 'JavaScript', 'HTML', 'CSS'],
+        note: 'From README + repo languages',
+        items: ['Python', 'HTML', 'TypeScript', 'JavaScript', 'CSS'],
       },
       {
-        title: 'Data & AI Concepts',
-        note: 'From GitHub bio — currently learning',
-        items: ['Machine Learning', 'Data Visualization'],
+        title: 'Frameworks & Libraries',
+        note: 'From README + package.json',
+        items: ['Flask', 'React', 'TanStack Start', 'TanStack Router', 'Radix UI'],
       },
       {
-        title: 'Tools & Workflow',
-        note: 'From repository collaboration history',
-        items: ['Git', 'GitHub', 'Branching & Pull Requests', 'Code Review'],
+        title: 'Styling & Build',
+        note: 'From repo languages + package.json',
+        items: ['Tailwind CSS', 'Vite', 'Responsive UI'],
+      },
+      {
+        title: 'AI & Data Concepts',
+        note: 'From README + live demo — exploring',
+        items: [
+          'Artificial Intelligence',
+          'AI-powered systems',
+          'Personalized learning',
+          'Multi-agent workflows',
+          'Databases',
+        ],
+      },
+      {
+        title: 'Tools & Platforms',
+        note: 'From README + GitHub activity',
+        items: ['GitHub', 'Git workflow', 'Deployment platforms', 'Vercel'],
       },
     ],
   },
@@ -88,23 +122,75 @@ export const portfolioData = {
   projects: {
     heading: 'Projects',
     subheading:
-      'One verified project so far — presented exactly as documented.',
+      'Two verified public repositories — one live web app, one documented profile repo. Nothing staged.',
     items: [
       {
-        name: 'Team Task Board',
-        tagline: 'A collaborative Git practice project.',
+        name: 'Spirit Coders — Smart Agent X',
+        repo: 'spirit-coders',
+        tagline: 'A multi-agent AI personalized learning platform — live on the web.',
         description:
-          'A small team task-board web app built to practise real Git collaboration: separate feature branches per member, pull requests and review before merging to main. I contributed as project lead on the project-setup branch.',
-        tech: ['HTML', 'CSS', 'JavaScript'],
+          'Public repository owned by me with a verified live deployment. The live site presents "Smart Agent X": a team of AI agents (tutor, planner, assessment, recommendations) guiding learners, with dashboards for students, teachers and admins.',
+        tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'TanStack Start', 'CSS', 'JavaScript'],
         features: [
-          'Task board UI rendered in the browser',
-          'Per-member feature branches (project-setup, UI, task logic)',
-          'Full team workflow: clone, branch, code, commit, pull, push, PR, review, merge',
-          'Runs locally by opening index.html — no build step',
+          'Live deployment linked from the repository homepage field',
+          'Four visible agents: Tutor, Planner, Assessor, Recommender',
+          'Twelve platform capabilities listed on the live site, incl. AI learning paths and progress tracking',
+          'Three roles on the live site: Students, Teachers, Admins',
         ],
-        role: 'Project Lead · feature/project-setup',
-        github: 'https://github.com/maankaalasushanth-crypto/team-task-board',
-        demo: null, // No homepage URL on the repo — no demo link rendered.
+        role: 'Repository owner · full-stack build',
+        github: 'https://github.com/abhilashkurella7/spirit-coders',
+        demo: 'https://spirit-coders.vercel.app',
+        visual: 'agents',
+      },
+      {
+        name: 'resume-',
+        repo: 'resume-',
+        tagline: 'Public README documenting my background and direction.',
+        description:
+          'A small public repository whose README states my education (B.Tech at NNRG), my Computer Science focus, and my interests across Python, web development, Flask, databases, GitHub, deployment and AI — the source for the About and Education sections on this page.',
+        tech: ['Markdown', 'GitHub'],
+        features: [
+          'Documents B.Tech pursuit at NNRG and CS direction',
+          'Lists hands-on stack: HTML, Python, Flask, databases, GitHub, deployment',
+          'States hackathon and technical-project participation',
+        ],
+        role: 'Owner · documentation',
+        github: 'https://github.com/abhilashkurella7/resume-',
+        demo: null,
+        visual: 'doc',
+      },
+    ],
+  },
+
+  education: {
+    heading: 'Education',
+    subheading: 'Only what my public README states — no dates, grades or coursework invented.',
+    items: [
+      {
+        institution: 'NNRG',
+        program: 'B.Tech',
+        field: 'Computer Science',
+        detail:
+          'Pursuing B.Tech at NNRG as a Computer Science student and aspiring software developer, per my public repository README.',
+      },
+    ],
+  },
+
+  activities: {
+    heading: 'Activities',
+    subheading: 'What my README documents — no event names invented.',
+    items: [
+      {
+        title: 'Hackathons',
+        text: 'Active participation in hackathons, per my public README.',
+      },
+      {
+        title: 'Technical projects',
+        text: 'Building practical technology solutions and software-focused problem solving.',
+      },
+      {
+        title: 'Continuous learning',
+        text: 'Exploring new technologies while strengthening programming, full-stack and AI fundamentals.',
       },
     ],
   },
@@ -112,16 +198,15 @@ export const portfolioData = {
   contact: {
     heading: 'Contact',
     subheading:
-      'The best way to reach me is email. My GitHub and LinkedIn are linked below.',
+      'No public email on record — the verified way to reach me is GitHub or LinkedIn.',
   },
 
-  // Sections rendered by the site. Experience, Education, Certifications and
-  // Achievements are omitted: none are documented in verified sources.
   nav: [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
+    { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
   ],
 

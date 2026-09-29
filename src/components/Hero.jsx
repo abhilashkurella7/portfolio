@@ -28,9 +28,8 @@ function Magnetic({ children }) {
 export default function Hero() {
   const { personal, social, resumePath } = portfolioData
   const [photoOk, setPhotoOk] = useState(true)
-  // Resume activates only when resume/resume.pdf exists in public/.
-  // No resume file was provided, so the button renders as a clearly
-  // labelled disabled state instead of a broken link.
+  // No resume file was provided — button stays a clearly labelled
+  // disabled state instead of a broken link.
   const resumeReady = false
   const resumeHref = resumePath
 
@@ -51,7 +50,7 @@ export default function Hero() {
             {personal.name}
           </h1>
           <p className="hero-role hero-enter" style={{ '--enter-delay': '200ms' }}>
-            Turning data into meaningful insights.
+            {personal.subline}
           </p>
           <p className="hero-bio hero-enter" style={{ '--enter-delay': '280ms' }}>
             {personal.bio}
@@ -100,7 +99,13 @@ export default function Hero() {
             <a href={social.github} target="_blank" rel="noreferrer">
               GitHub <span className="ext-mark" aria-hidden="true">↗</span>
             </a>
-            <a href={`mailto:${social.email}`}>Email</a>
+            <a
+              href="https://spirit-coders.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Live project <span className="ext-mark" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
@@ -127,11 +132,11 @@ export default function Hero() {
               <p className="profile-meta">
                 {personal.headline} · {personal.locationShort}
               </p>
-              <ul className="profile-chips" aria-label="Currently building skills in">
+              <ul className="profile-chips" aria-label="Currently working with">
                 <li>Python</li>
-                <li>SQL</li>
-                <li>Machine Learning</li>
-                <li>Data Visualization</li>
+                <li>Flask</li>
+                <li>TypeScript</li>
+                <li>React</li>
               </ul>
               <div className="mini-bars" aria-hidden="true">
                 {Array.from({ length: 12 }).map((_, i) => (

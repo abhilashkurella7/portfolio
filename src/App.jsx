@@ -4,12 +4,14 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Education from './components/Education'
+import Activities from './components/Activities'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function getInitialTheme() {
   try {
-    const saved = window.localStorage.getItem('sm-theme')
+    const saved = window.localStorage.getItem('ak-theme')
     if (saved === 'light' || saved === 'dark') return saved
   } catch {
     /* storage unavailable — fall through */
@@ -28,7 +30,7 @@ export default function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     try {
-      window.localStorage.setItem('sm-theme', theme)
+      window.localStorage.setItem('ak-theme', theme)
     } catch {
       /* storage unavailable — theme still applies for the session */
     }
@@ -47,6 +49,8 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
+        <Education />
+        <Activities />
         <Contact />
       </main>
       <Footer />

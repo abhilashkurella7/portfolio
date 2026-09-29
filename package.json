@@ -1,9 +1,9 @@
 {
-  "name": "sushanth-maankaala-portfolio",
+  "name": "abhilash-kurella-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Premium personal portfolio for Sushanth Maankaala — Data Science student. Built only from publicly verified information.",
+  "description": "Premium personal portfolio for Abhilash Kurella — CS student. Built only from publicly verified information.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

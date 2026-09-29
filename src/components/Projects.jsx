@@ -2,7 +2,7 @@ import { portfolioData } from '../data/portfolio'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-function ProjectVisual() {
+function AgentsVisual() {
   return (
     <div className="project-visual" aria-hidden="true">
       <div className="browser-mock">
@@ -10,24 +10,43 @@ function ProjectVisual() {
           <i />
           <i />
           <i />
-          <span>team-task-board — index.html</span>
+          <span>spirit-coders.vercel.app — Smart Agent X</span>
         </div>
         <div className="browser-body">
-          <div className="mock-cols">
-            <div className="mock-col">
-              <h4>To do</h4>
-              <div className="mock-task" />
-              <div className="mock-task" />
-            </div>
-            <div className="mock-col">
-              <h4>Doing</h4>
-              <div className="mock-task" />
-            </div>
-            <div className="mock-col">
-              <h4>Done</h4>
-              <div className="mock-task done" />
-              <div className="mock-task done" />
-            </div>
+          <div className="agent-hero">
+            <span className="agent-pill">Multi-agent AI · Personalized learning</span>
+            <strong>A team of AI agents, guiding every learner forward.</strong>
+          </div>
+          <div className="agent-grid">
+            {['Tutor', 'Planner', 'Assessor', 'Recommender'].map((a) => (
+              <div className="agent-card" key={a}>
+                <span>{a}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function DocVisual() {
+  return (
+    <div className="project-visual" aria-hidden="true">
+      <div className="browser-mock">
+        <div className="browser-bar">
+          <i />
+          <i />
+          <i />
+          <span>resume- — README.md</span>
+        </div>
+        <div className="browser-body">
+          <div className="doc-lines">
+            <strong>Hi — I am Abhilash, B.Tech @ NNRG.</strong>
+            <span />
+            <span className="short" />
+            <span />
+            <span className="short" />
           </div>
         </div>
       </div>
@@ -50,7 +69,7 @@ export default function Projects() {
         {projects.items.map((project, i) => (
           <Reveal key={project.name} delay={i * 80}>
             <article className="project-card" aria-labelledby={`project-${i}`}>
-              <ProjectVisual />
+              {project.visual === 'agents' ? <AgentsVisual /> : <DocVisual />}
               <div className="project-body">
                 <div className="project-top">
                   <h3 id={`project-${i}`}>{project.name}</h3>
@@ -102,8 +121,8 @@ export default function Projects() {
         <Reveal delay={120}>
           <div className="more-card">
             <p>
-              I&apos;m early in my journey — this space grows with every
-              repository I ship. Follow along on GitHub for what&apos;s next.
+              Two public repositories so far — this space grows with every repo I
+              ship. Follow along on GitHub for what&apos;s next.
             </p>
             <a
               href={social.github}

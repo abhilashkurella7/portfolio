@@ -58,7 +58,7 @@ export default function Navbar({ theme, onToggleTheme }) {
           <span className="brand-mark" aria-hidden="true">
             {initials}
           </span>
-          Sushanth
+          Abhilash
         </a>
 
         <nav aria-label="Primary">
