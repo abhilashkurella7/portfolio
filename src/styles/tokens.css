@@ -1,0 +1,47 @@
+/* Design tokens — "Paper & Ink" editorial theme for a data student. */
+
+:root {
+  --paper: #faf8f4;
+  --paper-2: #f1ede3;
+  --card: #ffffff;
+  --ink: #16181d;
+  --ink-2: #4c5058;
+  --ink-3: #7b7f88;
+  --line: #e2dccb;
+  --line-soft: #ede8d9;
+  --accent: #0c6e5e;
+  --accent-strong: #095544;
+  --accent-tint: #e2f1ec;
+  --gold: #b7791f;
+  --gold-tint: #f7ecd4;
+  --danger: #b3261e;
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --shadow-s: 0 1px 2px rgb(22 24 29 / 0.05), 0 4px 16px -8px rgb(22 24 29 / 0.12);
+  --shadow-m: 0 2px 4px rgb(22 24 29 / 0.05), 0 16px 40px -16px rgb(22 24 29 / 0.18);
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  --max-w: 1120px;
+  --pad-x: clamp(1.25rem, 4vw, 2.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme='dark'] {
+  --paper: #101216;
+  --paper-2: #171a20;
+  --card: #1a1e26;
+  --ink: #edebe3;
+  --ink-2: #b9bcc4;
+  --ink-3: #878b95;
+  --line: #2a2f3a;
+  --line-soft: #20242e;
+  --accent: #4cc9a5;
+  --accent-strong: #7bddc0;
+  --accent-tint: #143129;
+  --gold: #d9a441;
+  --gold-tint: #33270f;
+  --shadow-s: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.5);
+  --shadow-m: 0 2px 6px rgb(0 0 0 / 0.4), 0 24px 56px -20px rgb(0 0 0 / 0.6);
+}

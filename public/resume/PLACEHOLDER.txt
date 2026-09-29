@@ -1,0 +1,15 @@
+RESUME PLACEHOLDER
+==================
+
+No resume file has been added yet.
+
+To enable the "Resume" button on the site, export your resume as PDF and
+save it here as:
+
+    public/resume/resume.pdf
+
+The site already links to resume/resume.pdf — the button activates
+automatically once the file exists. Until then it renders as a disabled
+"Resume — coming soon" state so no link is ever broken.
+
+Do not commit private information you do not want public.
