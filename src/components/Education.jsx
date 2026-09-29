@@ -6,7 +6,7 @@ export default function Education() {
   const { education } = portfolioData
   if (!education || !education.items || !education.items.length) return null
   return (
-    <section className="section section-alt" id="education" aria-labelledby="education-title">
+    <section className="section" id="education" aria-labelledby="education-title">
       <div className="wrap">
         <SectionHeading
           index="04"
@@ -15,19 +15,20 @@ export default function Education() {
           sub={education.subheading}
           id="education-title"
         />
-        <div className="edu-grid">
+        <ol className="timeline">
           {education.items.map((item) => (
-            <Reveal key={item.institution}>
-              <article className="edu-card">
-                <p className="edu-program">
+            <Reveal as="li" key={item.institution}>
+              <span className="t-dot" aria-hidden="true" />
+              <div>
+                <p className="t-program">
                   {item.program} · {item.field}
                 </p>
                 <h3>{item.institution}</h3>
-                <p className="edu-detail">{item.detail}</p>
-              </article>
+                <p>{item.detail}</p>
+              </div>
             </Reveal>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

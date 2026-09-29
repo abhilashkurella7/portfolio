@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import { portfolioData } from '../data/portfolio'
 
 function Magnetic({ children }) {
@@ -9,7 +9,7 @@ function Magnetic({ children }) {
     const rect = el.getBoundingClientRect()
     const x = (e.clientX - rect.left - rect.width / 2) / rect.width
     const y = (e.clientY - rect.top - rect.height / 2) / rect.height
-    el.style.transform = `translate(${x * 6}px, ${y * 6}px)`
+    el.style.transform = `translate(${x * 7}px, ${y * 7}px)`
   }
   const onLeave = (e) => {
     e.currentTarget.style.transform = ''
@@ -27,125 +27,143 @@ function Magnetic({ children }) {
 
 export default function Hero() {
   const { personal, social, resumePath } = portfolioData
-  const [photoOk, setPhotoOk] = useState(true)
+  const sectionRef = useRef(null)
   // No resume file was provided — button stays a clearly labelled
   // disabled state instead of a broken link.
   const resumeReady = false
-  const resumeHref = resumePath
+
+  const onPointer = (e) => {
+    if (e.pointerType && e.pointerType !== 'mouse') return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const node = sectionRef.current
+    if (!node) return
+    const rect = node.getBoundingClientRect()
+    node.style.setProperty('--mx', `${e.clientX - rect.left}px`)
+    node.style.setProperty('--my', `${e.clientY - rect.top}px`)
+  }
 
   return (
-    <section className="hero" id="home" aria-labelledby="hero-name">
-      <div className="hero-bg" aria-hidden="true" />
-      <div className="wrap hero-grid">
-        <div>
-          <p className="hero-kicker hero-enter" style={{ '--enter-delay': '40ms' }}>
-            <span className="dot" aria-hidden="true" />
-            {personal.headline} · {personal.locationShort}
+    <section
+      className="hero"
+      id="home"
+      aria-labelledby="hero-name"
+      ref={sectionRef}
+      onPointerMove={onPointer}
+    >
+      <div className="hero-grid-bg" aria-hidden="true" />
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="wrap hero-inner">
+        <div className="hero-top hero-enter" style={{ '--enter-delay': '60ms' }}>
+          <span className="lbl">Folio — © 2026</span>
+          <span className="lbl hide-sm">Hyderabad, IN · 17.38°N 78.48°E</span>
+          <span className="dot-live">
+            <i aria-hidden="true" />
+            Open to collaboration
+          </span>
+        </div>
+
+        <h1 id="hero-name" className="hero-name" aria-label={personal.name}>
+          <span className="row hero-enter" style={{ '--enter-delay': '140ms' }} aria-hidden="true">
+            <span>Abhilash</span>
+          </span>
+          <span className="row hero-enter" style={{ '--enter-delay': '230ms' }} aria-hidden="true">
+            <span className="stroke">Kurella</span>
+          </span>
+        </h1>
+
+        <div className="hero-mid">
+          <p className="hero-role hero-enter" style={{ '--enter-delay': '320ms' }}>
+            {personal.headline} — <em>{personal.subline}</em>
           </p>
-          <h1
-            id="hero-name"
-            className="hero-name hero-enter"
-            style={{ '--enter-delay': '120ms' }}
-          >
-            {personal.name}
-          </h1>
-          <p className="hero-role hero-enter" style={{ '--enter-delay': '200ms' }}>
-            {personal.subline}
-          </p>
-          <p className="hero-bio hero-enter" style={{ '--enter-delay': '280ms' }}>
+          <p className="hero-bio hero-enter" style={{ '--enter-delay': '400ms' }}>
             {personal.bio}
           </p>
-          <div className="hero-cta hero-enter" style={{ '--enter-delay': '360ms' }}>
-            <Magnetic>
-              <a href="#projects" className="btn btn-primary">
-                View my work
-                <span aria-hidden="true">↓</span>
-              </a>
-            </Magnetic>
-            <Magnetic>
-              <a
-                href={social.github}
-                className="btn btn-ghost"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-                <span className="ext-mark" aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-            </Magnetic>
-            {resumeReady ? (
-              <Magnetic>
-                <a href={resumeHref} className="btn btn-ghost" download>
-                  Resume
-                  <span aria-hidden="true">↓</span>
-                </a>
-              </Magnetic>
-            ) : (
-              <span
-                className="btn btn-ghost"
-                aria-disabled="true"
-                title="Add public/resume/resume.pdf to enable this button"
-              >
-                Resume — coming soon
-              </span>
-            )}
-          </div>
-          <div className="hero-links hero-enter" style={{ '--enter-delay': '440ms' }}>
-            <a href={social.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn <span className="ext-mark" aria-hidden="true">↗</span>
+        </div>
+
+        <div className="hero-cta hero-enter" style={{ '--enter-delay': '480ms' }}>
+          <Magnetic>
+            <a href="#projects" className="btn btn-solid">
+              View my work
+              <span className="ext" aria-hidden="true">↓</span>
             </a>
-            <a href={social.github} target="_blank" rel="noreferrer">
-              GitHub <span className="ext-mark" aria-hidden="true">↗</span>
-            </a>
+          </Magnetic>
+          <Magnetic>
             <a
-              href="https://spirit-coders.vercel.app"
+              href={social.github}
+              className="btn btn-line"
               target="_blank"
               rel="noreferrer"
             >
-              Live project <span className="ext-mark" aria-hidden="true">↗</span>
+              GitHub
+              <span className="ext" aria-hidden="true">↗</span>
             </a>
-          </div>
+          </Magnetic>
+          {resumeReady ? (
+            <Magnetic>
+              <a href={resumePath} className="btn btn-line" download>
+                Resume
+                <span className="ext" aria-hidden="true">↓</span>
+              </a>
+            </Magnetic>
+          ) : (
+            <span
+              className="btn btn-line"
+              aria-disabled="true"
+              title="Add public/resume/resume.pdf to enable this button"
+            >
+              Resume — coming soon
+            </span>
+          )}
         </div>
 
-        <div className="hero-enter" style={{ '--enter-delay': '300ms' }}>
-          <div className="profile-card">
-            <div className="profile-banner" aria-hidden="true" />
-            <div className="profile-body">
-              {photoOk ? (
-                <img
-                  className="profile-photo"
-                  src={personal.avatar}
-                  alt={`Profile photo of ${personal.name}`}
-                  width="104"
-                  height="104"
-                  loading="eager"
-                  onError={() => setPhotoOk(false)}
-                />
-              ) : (
-                <div className="profile-fallback" aria-hidden="true">
-                  {personal.initials}
-                </div>
-              )}
-              <p className="profile-name">{personal.name}</p>
-              <p className="profile-meta">
-                {personal.headline} · {personal.locationShort}
-              </p>
-              <ul className="profile-chips" aria-label="Currently working with">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>TypeScript</li>
-                <li>React</li>
-              </ul>
-              <div className="mini-bars" aria-hidden="true">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <i key={i} />
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="hero-links hero-enter" style={{ '--enter-delay': '560ms' }}>
+          <a href={social.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn <span className="ext" aria-hidden="true">↗</span>
+          </a>
+          <a href={social.github} target="_blank" rel="noreferrer">
+            GitHub <span className="ext" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://spirit-coders.vercel.app" target="_blank" rel="noreferrer">
+            Live project <span className="ext" aria-hidden="true">↗</span>
+          </a>
         </div>
+
+        <dl className="spec hero-enter" style={{ '--enter-delay': '640ms' }}>
+          <div>
+            <dt>Status</dt>
+            <dd>Pursuing B.Tech · NNRG</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Python · Web · AI systems</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>TypeScript · React · Flask</dd>
+          </div>
+          <div>
+            <dt>Live</dt>
+            <dd>
+              <a
+                href="https://spirit-coders.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Smart Agent X ↗
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <a
+          className="scroll-cue hero-enter"
+          style={{ '--enter-delay': '720ms', marginTop: '2.5rem' }}
+          href="#about"
+          aria-label="Scroll to about section"
+        >
+          <span className="track" aria-hidden="true" />
+          <span className="lbl">Scroll</span>
+        </a>
       </div>
     </section>
   )

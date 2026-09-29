@@ -17,17 +17,22 @@ export default function About() {
           <Reveal>
             <p className="about-lede">{about.paragraphs[0]}</p>
             <p>{about.paragraphs[1]}</p>
-            <p className="status-card">{about.statusLine}</p>
+            <p className="status-strip">
+              <strong>Now — </strong>
+              {about.statusLine}
+            </p>
           </Reveal>
           <Reveal delay={120}>
-            <ul className="focus-grid">
+            <ul className="index-rows">
               {about.focusPoints.map((point, i) => (
-                <li className="focus-card" key={point.title}>
-                  <span className="focus-num" aria-hidden="true">
+                <li key={point.title}>
+                  <span className="idx" aria-hidden="true">
                     0{i + 1}
                   </span>
-                  <h3>{point.title}</h3>
-                  <p>{point.text}</p>
+                  <div>
+                    <h3>{point.title}</h3>
+                    <p>{point.text}</p>
+                  </div>
                 </li>
               ))}
             </ul>

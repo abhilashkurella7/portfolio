@@ -1,47 +1,81 @@
-/* Design tokens — "Paper & Ink" editorial theme for a data student. */
+/* KŪRA v2 — "Copperplate Terminal" design tokens.
+   Light: warm bone editorial. Dark: deep carbon cinematic.
+   One strategic accent: ember copper. Everything else neutral. */
 
 :root {
-  --paper: #faf8f4;
-  --paper-2: #f1ede3;
-  --card: #ffffff;
-  --ink: #16181d;
-  --ink-2: #4c5058;
-  --ink-3: #7b7f88;
-  --line: #e2dccb;
-  --line-soft: #ede8d9;
-  --accent: #0c6e5e;
-  --accent-strong: #095544;
-  --accent-tint: #e2f1ec;
-  --gold: #b7791f;
-  --gold-tint: #f7ecd4;
-  --danger: #b3261e;
-  --radius-s: 10px;
-  --radius-m: 16px;
-  --radius-l: 24px;
-  --shadow-s: 0 1px 2px rgb(22 24 29 / 0.05), 0 4px 16px -8px rgb(22 24 29 / 0.12);
-  --shadow-m: 0 2px 4px rgb(22 24 29 / 0.05), 0 16px 40px -16px rgb(22 24 29 / 0.18);
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
-  --max-w: 1120px;
-  --pad-x: clamp(1.25rem, 4vw, 2.5rem);
+
+  --max-w: 1200px;
+  --nav-h: 64px;
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 18px;
+  --radius-pill: 999px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/* ---------- Light: Bone Editorial ---------- */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f3efe6;
+  --bg-raise: #eae4d4;
+  --surface: #faf7ef;
+  --surface-2: #efe9d9;
+  --ink: #16130d;
+  --ink-2: #57534a;
+  --ink-3: #8b8474;
+  --line: #d9d1bc;
+  --line-soft: #e6dfcc;
+  --hairline: #ddd5c0;
+
+  --accent: #9c3d1a;
+  --accent-strong: #7e3013;
+  --accent-soft: #f0dcc9;
+  --accent-ghost: rgba(156, 61, 26, 0.08);
+  --on-accent: #faf7ef;
+
+  --glow: rgba(156, 61, 26, 0.1);
+  --grid-line: rgba(22, 19, 13, 0.07);
+  --nav-bg: rgba(243, 239, 230, 0.78);
+  --overlay-bg: rgba(243, 239, 230, 0.96);
+
+  --shadow-s: 0 1px 2px rgba(22, 19, 13, 0.06), 0 6px 20px -10px rgba(22, 19, 13, 0.18);
+  --shadow-m: 0 2px 6px rgba(22, 19, 13, 0.06), 0 24px 60px -24px rgba(22, 19, 13, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(156, 61, 26, 0.18), 0 12px 44px -12px rgba(156, 61, 26, 0.35);
+}
+
+/* ---------- Dark: Carbon Cinematic ---------- */
 [data-theme='dark'] {
-  --paper: #101216;
-  --paper-2: #171a20;
-  --card: #1a1e26;
-  --ink: #edebe3;
-  --ink-2: #b9bcc4;
-  --ink-3: #878b95;
-  --line: #2a2f3a;
-  --line-soft: #20242e;
-  --accent: #4cc9a5;
-  --accent-strong: #7bddc0;
-  --accent-tint: #143129;
-  --gold: #d9a441;
-  --gold-tint: #33270f;
-  --shadow-s: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.5);
-  --shadow-m: 0 2px 6px rgb(0 0 0 / 0.4), 0 24px 56px -20px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+
+  --bg: #0d0e0b;
+  --bg-raise: #12130e;
+  --surface: #151610;
+  --surface-2: #1b1c14;
+  --ink: #ede8d8;
+  --ink-2: #b3ac97;
+  --ink-3: #7d7767;
+  --line: #27281d;
+  --line-soft: #1e1f17;
+  --hairline: #23241a;
+
+  --accent: #e0915a;
+  --accent-strong: #f0b183;
+  --accent-soft: #2c1f12;
+  --accent-ghost: rgba(224, 145, 90, 0.1);
+  --on-accent: #171208;
+
+  --glow: rgba(224, 145, 90, 0.12);
+  --grid-line: rgba(237, 232, 216, 0.055);
+  --nav-bg: rgba(13, 14, 11, 0.72);
+  --overlay-bg: rgba(13, 14, 11, 0.97);
+
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px -12px rgba(0, 0, 0, 0.6);
+  --shadow-m: 0 2px 8px rgba(0, 0, 0, 0.5), 0 32px 72px -28px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 0 1px rgba(224, 145, 90, 0.22), 0 16px 56px -16px rgba(224, 145, 90, 0.28);
 }

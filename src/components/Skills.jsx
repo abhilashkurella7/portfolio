@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading'
 export default function Skills() {
   const { skills } = portfolioData
   return (
-    <section className="section section-alt" id="skills" aria-labelledby="skills-title">
+    <section className="section" id="skills" aria-labelledby="skills-title">
       <div className="wrap">
         <SectionHeading
           index="02"
@@ -14,23 +14,25 @@ export default function Skills() {
           sub={skills.subheading}
           id="skills-title"
         />
-        <div className="skills-grid">
+        <div className="skill-rows">
           {skills.groups.map((group, i) => (
-            <Reveal key={group.title} delay={i * 110}>
-              <article className="skill-group">
-                <h3>{group.title}</h3>
-                <p className="skill-note">{group.note}</p>
-                <ul className="chip-list">
+            <Reveal key={group.title} delay={i * 70}>
+              <div className="skill-row">
+                <div>
+                  <h3>{group.title}</h3>
+                  <p className="note">{group.note}</p>
+                </div>
+                <ul className="chips" aria-label={group.title}>
                   {group.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </article>
+              </div>
             </Reveal>
           ))}
         </div>
-        <Reveal delay={150}>
-          <p className="honesty-note">
+        <Reveal delay={120}>
+          <p className="honesty">
             No proficiency bars or percentages — those would imply measurements
             that don&apos;t exist. This list mirrors exactly what my public
             README, repositories and live demo document.

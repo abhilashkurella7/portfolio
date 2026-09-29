@@ -15,16 +15,14 @@ export default function Activities() {
           sub={activities.subheading}
           id="activities-title"
         />
-        <ul className="focus-grid">
+        <ul className="act-grid">
           {activities.items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 90}>
-              <li className="focus-card">
-                <span className="focus-num" aria-hidden="true">
-                  0{i + 1}
-                </span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </li>
+            <Reveal as="li" key={item.title} delay={i * 90}>
+              <span className="act-num" aria-hidden="true">
+                0{i + 1}
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </Reveal>
           ))}
         </ul>

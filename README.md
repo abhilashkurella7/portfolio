@@ -2,8 +2,9 @@
 
 Premium personal portfolio for **Abhilash Kurella**, Computer Science
 student (B.Tech, NNRG) and aspiring software developer.
-React + Vite, no heavy animation libraries, light-first editorial theme with
-an optional dark mode.
+React + Vite, no heavy animation libraries. "Copperplate Terminal" design
+system: warm bone editorial light mode, deep carbon cinematic dark mode,
+Space Grotesk display type, hairline rules, one ember-copper accent.
 
 > **Truthfulness rule:** every fact on this site traces to a publicly
 > verified source (GitHub profile + repositories + live demo, user-provided
